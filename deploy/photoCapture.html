@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Photo Capture</title>
+<script language="JavaScript">
+ function getFlashMovie(movieName) {
+  var isIE = navigator.appName.indexOf("Microsoft") != -1;
+  return (isIE) ? window[movieName] : document[movieName];
+}
+		
+ 
+ function capturePhoto() {	
+ 	
+ 	getFlashMovie("photoCapture_flash").capturePhoto('testing');
+ }
+ 
+ function capturePhotoComplete() {
+  	//return str + " received";
+	alert("Photo Capture Complete");
+ }
+</script>
+
+</head>
+<body bgcolor="#ffffff">  
+    
+    <div id="photoCapture" style="">
+        <table class="table1" border="0" cellpadding="0" cellspacing="0" width="400">
+            <tbody>
+            	<tr>
+                <td align="left" width="1">
+                <div style="border: 1px solid rgb(153, 153, 153);">
+               <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" width="230" height="172" id="photoCapture_flash" align="middle">
+                <param name="allowScriptAccess" value="crossDomain" />
+                <param name="allowFullScreen" value="false" />
+                <param name="movie" value="photoCapture.swf?guid=12345" />
+                <param name="quality" value="best" />
+                <param name="bgcolor" value="#000000" />	
+                <embed src="photoCapture.swf?guid=12345" swliveconnect="true" quality="best" bgcolor="#00000" width="230" height="172" name="photoCapture_flash" align="middle" allowScriptAccess="crossDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                </object>
+
+                </div>
+                </td>
+                <td align="center">
+                    <img src="assets/images/btnCircle_takePhoto_up.png" alt="Take the Photo" id="btnTakePhoto" title="Take the Photo" onClick="javascript:capturePhoto();">
+                </td>
+            </tr>
+        </tbody>
+        </table>
+	</div>
+
+</body>
+</html>
